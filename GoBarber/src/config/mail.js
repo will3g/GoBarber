@@ -1,10 +1,10 @@
 export default { //Comunicação via SMTP (protocolo de envio de emails)
-  host: 'smtp.mailtrap.io',
-  port: 2525,
+  host: process.env.MAIL_HOST,
+  port: process.env.MAIL_PORT,
   secure: false,
   auth: {
-    user: '4e6c58a93cb39a',
-    pass: 'e12d729e7e8cca',
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
   },
   default: {
     from: 'Equipe GoBarber <noreply@gobarber.com>',
@@ -17,7 +17,7 @@ export default { //Comunicação via SMTP (protocolo de envio de emails)
  * + Maligun
  * + Sparkpost
  * + Mandril (que só pode ser usado com o Mailchip)
- * 
+ *
  * -- Durante desenvolvimento -- *
  * + Mailtrap (somente DEV)
  */
